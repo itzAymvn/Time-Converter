@@ -4,18 +4,24 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Aymvn | Timezone Converter</title>
         <link rel="stylesheet" href="style.css" />
+        <script
+            src="https://kit.fontawesome.com/4ee017f251.js"
+            crossorigin="anonymous"></script>
     </head>
     <body>
-        <div class="converter">
+        <form class="converter">
             <label for="current">
-                <div>Current Time:</div>
+                <div>
+                    <i class="fa-regular fa-clock"></i>Current Time
+                    <span id="currentTimeZone"></span>
+                </div>
                 <input type="text" id="current" disabled /> </label
             ><br />
 
             <label for="target">
-                <div>Target Timezone:</div>
+                <div><i class="fa-solid fa-timeline"></i>Target Timezone:</div>
                 <input
                     type="text"
                     id="target"
@@ -25,12 +31,18 @@
             ><br />
 
             <label for="timezonetime">
-                <div>Target timezone time:</div>
+                <div>
+                    <i class="fa-solid fa-clock-rotate-left"></i>Target timezone
+                    time:
+                </div>
                 <input type="text" id="timezonetime" disabled /> </label
             ><br />
 
-            <button id="convert">Convert</button>
-        </div>
+            <button type="submit" id="convert" disabled>
+                <i class="fa-solid fa-repeat"></i>
+                Convert
+            </button>
+        </form>
         <script src="index.js"></script>
     </body>
 </html>
