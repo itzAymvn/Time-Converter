@@ -65,6 +65,8 @@ const convertTime = async (timezone = targetTimezoneInput.value) => {
         const timezoneTimeStr = timezoneData.datetime.slice(11, 19);
         timezoneTime.value = timezoneTimeStr;
     } catch (error) {
+        clearInterval(interval);
+        clearInterval(bothInterval);
         // Display error message
         const alertBox = document.createElement("div");
 
