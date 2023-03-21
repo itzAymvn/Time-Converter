@@ -15,19 +15,16 @@ body {
     height: 100%;
     min-width: 100vw;
     flex-direction: column;
+    transition: all 0.3s ease;
 }
 
-/* hide scroll bars */
+body.light {
+    background-color: #fff;
+    color: #000;
+}
+
 body::-webkit-scrollbar {
     display: none;
-}
-
-h1 {
-    color: #fff;
-    text-align: center;
-    font-weight: 500;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
 }
 
 label {
@@ -47,6 +44,10 @@ label div {
     color: #888;
 }
 
+body.light #currentTimeZone {
+    color: #555;
+}
+
 input[type="text"] {
     background-color: #333;
     color: #fff;
@@ -55,11 +56,21 @@ input[type="text"] {
     margin-bottom: 1rem;
     border-radius: 5px;
     width: 100%;
+    transition: all 0.3s ease;
+}
+
+body.light input[type="text"] {
+    background-color: #e9e9e9;
+    color: #000;
 }
 
 input[type="text"]:focus {
     outline: none;
     box-shadow: 0px 0px 5px #fff;
+}
+
+body.light input[type="text"]:focus {
+    box-shadow: 0px 0px 5px #000;
 }
 
 button {
@@ -72,13 +83,26 @@ button {
     transition: all 0.3s ease;
 }
 
+body.light button {
+    background-color: #e9e9e9;
+    color: #000;
+}
+
 button:hover {
-    background-color: #555;
+    background-color: #a6a6a6;
+}
+
+body.light button:hover {
+    background-color: #888;
 }
 
 button[disabled] {
     background-color: #555;
     cursor: not-allowed;
+}
+
+button[disabled]:hover {
+    background-color: #555;
 }
 
 i {
@@ -92,6 +116,10 @@ i {
     border-radius: 10px;
     box-shadow: 0px 0px 10px #000;
     width: 100%;
+}
+
+body.light .converter {
+    box-shadow: 0px 0px 10px #757575;
 }
 
 .error {
@@ -108,4 +136,57 @@ i {
         padding: 1rem;
         width: 90%;
     }
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.checkbox:checked + .label .ball {
+    -webkit-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    transform: translateX(0px);
+}
+
+.label {
+    position: relative;
+    margin-left: 30px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    width: 50px;
+    height: 26px;
+    background-color: #121212;
+    border-radius: 50px;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.fa-moon {
+    color: white;
+}
+.fa-sun {
+    color: white;
+}
+.ball {
+    width: 22px;
+    height: 22px;
+    top: 2px;
+    left: 2px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    -webkit-transform: translateX(24px);
+    -ms-transform: translateX(24px);
+    transform: translateX(24px);
+    -webkit-transition: -webkit-transform 0.2s linear;
+    transition: -webkit-transform 0.2s linear;
+    -o-transition: transform 0.2s linear;
+    transition: transform 0.2s linear, -webkit-transform 0.2s linear;
 }

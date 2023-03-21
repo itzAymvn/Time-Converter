@@ -80,9 +80,9 @@ const convertTime = async (timezone = targetTimezoneInput.value) => {
 };
 let interval;
 let bothInterval;
+
 // Set current time on page load
 window.onload = async () => {
-    console.log(timezonesfetched);
     // create a interval to update the time every second and will be cleared when button is clicked
     interval = setInterval(() => {
         getCurrentTime();
@@ -111,5 +111,14 @@ targetTimezoneInput.addEventListener("input", (e) => {
         convertButton.disabled = false;
     } else {
         convertButton.disabled = true;
+    }
+});
+
+const darkModeInput = document.getElementById("checkbox");
+darkModeInput.addEventListener("change", (e) => {
+    if (darkModeInput.checked) {
+        document.body.classList.add("light");
+    } else {
+        document.body.classList.remove("light");
     }
 });

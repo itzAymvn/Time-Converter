@@ -11,10 +11,22 @@
             crossorigin="anonymous"></script>
     </head>
     <body>
+        <div
+            class="darkmode"
+            id="darkmode"
+            title="Toggle between dark mode and light mode">
+            <input type="checkbox" class="checkbox" id="checkbox" /><label
+                for="checkbox"
+                class="label"
+                ><i class="fas fa-moon"></i><i class="fas fa-sun"></i>
+                <div class="ball"></div
+            ></label>
+        </div>
+
         <form class="converter">
             <label for="current">
                 <div>
-                    <i class="fa-regular fa-clock"></i>Current Time
+                    <i class="fa-regular fa-clock"></i>Local Time
                     <span id="currentTimeZone"></span>
                 </div>
                 <input type="text" id="current" disabled /> </label
